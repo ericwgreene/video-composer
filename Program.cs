@@ -117,10 +117,10 @@ namespace VideoApp
         using (var process = new System.Diagnostics.Process()) {
           process.StartInfo.FileName = Path.Join(Environment.CurrentDirectory, "ffmpeg");
           process.StartInfo.Arguments = String.Join(" ", ffmpegArgs);
-          process.StartInfo.RedirectStandardError = true;
-          process.ErrorDataReceived += new System.Diagnostics.DataReceivedEventHandler((sender, e) => {
-            Log.Error(e.Data);
-          });
+          // process.StartInfo.RedirectStandardError = true;
+          // process.ErrorDataReceived += new System.Diagnostics.DataReceivedEventHandler((sender, e) => {
+          //  Log.Error(e.Data);
+          // });
 
           process.Start();
           process.WaitForExit();
